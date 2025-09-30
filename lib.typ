@@ -7,6 +7,21 @@
   set document(title: title, author: name)
   set text(font: "New Computer Modern")
   set par(justify: true)
+  show footnote: set text(blue)
+  show footnote.entry: it => {
+    let loc = it.note.location()
+    text(
+      fill: blue,
+      super(
+        numbering(
+          "1",
+          ..counter(footnote).at(loc),
+        )
+      )
+    )
+    it.note.body
+  }
+
 
   set page(
     paper: "a4",
