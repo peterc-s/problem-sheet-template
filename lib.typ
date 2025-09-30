@@ -6,6 +6,7 @@
 ) = {
   set document(title: title, author: name)
   set text(font: "New Computer Modern")
+  set par(justify: true)
 
   set page(
     paper: "a4",
