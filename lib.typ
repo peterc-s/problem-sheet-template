@@ -7,6 +7,8 @@
   set document(title: title, author: name)
   set text(font: "New Computer Modern")
   set par(justify: true)
+
+  // set up footnote colouring
   show footnote: set text(blue)
   show footnote.entry: it => {
     let loc = it.note.location()
@@ -21,7 +23,6 @@
     )
     it.note.body
   }
-
 
   set page(
     paper: "a4",
@@ -75,4 +76,10 @@
   ]
 
   doc
+}
+
+
+#let appendix(body) = {
+  set heading(numbering: "A.1 :", supplement: [Appendix])
+  body
 }
