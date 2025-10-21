@@ -8,6 +8,16 @@
   set text(font: "New Computer Modern")
   set par(justify: true)
 
+  show link: it => {
+    set text(fill: blue, font: "FreeMono")
+    it
+  }
+
+  show cite: it => {
+    show regex("\d+"): set text(fill: blue)
+    it
+  }
+
   // set up footnote colouring
   show footnote: set text(blue)
   show footnote.entry: it => {
