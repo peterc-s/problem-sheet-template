@@ -28,10 +28,16 @@
         numbering(
           "1",
           ..counter(footnote).at(loc),
-        )
-      )
+        ),
+      ),
     )
     it.note.body
+  }
+
+  set enum(numbering: "1.a.i.")
+
+  show math.equation.where(block: true): eq => {
+    block(width: 100%, inset: 0pt, align(center, eq))
   }
 
   set page(
@@ -47,7 +53,7 @@
             #name
             #v(-0.66em)
             #line(length: 100%)
-          ]
+          ],
         )
       } else {
         []
@@ -59,7 +65,7 @@
       line(length: 100%)
       v(-0.66em)
       align(center)[#here().page()]
-    }
+    },
   )
 
   let date = datetime.today()
@@ -81,7 +87,7 @@
     === #date.display("[day padding:none]" + ord_ind + " [month repr:long] [year]")
     #block(
       width: header-footer-width,
-      line(length: 100%)
+      line(length: 100%),
     )
   ]
 
